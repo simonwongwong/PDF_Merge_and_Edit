@@ -1,7 +1,7 @@
 import PyPDF2
 import os, time
 
-print("!!!PDF Merger and Editor 5000!!! by simon wong")
+print("PDF Merger and Editor by simon wong")
 print()
 
 def merge():
