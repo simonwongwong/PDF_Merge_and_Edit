@@ -65,12 +65,6 @@ def merge():
 	secondFile = checkExist(secondFile.get())
 	mergedFile = mergedFile.get()
 	
-
-	# print("Creates a new PDF file with the second file added to the end of the first file")
-	# firstFile = checkExist(input("Enter the first file name (without the .pdf): "))
-	# secondFile = checkExist(input("Enter the second file name (without the .pdf): "))
-	# mergedFile = input("Enter the desired name of the merged file (must be different from other files): ")
-
 	mergedBook = PyPDF2.PdfFileMerger()
 	mergedBook.append(firstFile)
 	mergedBook.append(secondFile)
@@ -172,7 +166,7 @@ def insertPage():
 	pageWithInsert.grid(row=4, column=1, sticky=stickyFill, pady=5, padx=5)
 	pageWithInsert.insert(0, "1")
 
-	tk.Button(inserterWindow, text="Update!", command=lambda: inserterWindow.quit()).grid(row=5,column=0, columnspan=3, padx=5, pady=10, sticky=stickyFill)
+	tk.Button(inserterWindow, text="Insert!", command=lambda: inserterWindow.quit()).grid(row=5,column=0, columnspan=3, padx=5, pady=10, sticky=stickyFill)
 
 	inserterWindow.mainloop()
 
@@ -209,37 +203,6 @@ def insertPage():
 
 	inserterWindow.destroy()
 	finished(filename, "Page insert", inserterWindow)
-
-
-	# print()
-	# print("Inserts the first page of a PDF into another PDF at a desired page")
-	# oName = input("Enter name of file to be updated: ")
-	# original = checkExist(oName)
-	# insert = checkExist(input("Enter name of the PDF to be inserted: "))
-	# pageNum = int(input("Enter the page number to insert into: "))
-	# if pageNum == 0:
-	# 	print("invalid page number, must be greater than 0")
-	# 	return
-	# pageIndex = pageNum - 1
-
-	# oPDF = PyPDF2.PdfFileReader(original)
-	# iPDF = PyPDF2.PdfFileReader(insert)
-
-	# oBook = PyPDF2.PdfFileWriter()
-	# oBook.cloneDocumentFromReader(oPDF)
-	# oBook.insertPage(iPDF.getPage(0),pageIndex)
-
-	# outputFile = open(oName+'-inserted.pdf','wb')
-	# pdfOut = PyPDF2.PdfFileWriter()
-
-	# for i in range(oBook.getNumPages()):
-	# 		pdfOut.addPage(oBook.getPage(i))
-
-	# pdfOut.write(outputFile)
-
-	# print()
-	# print("Updated file with insertion saved as", oName+"-inserted.pdf")
-	# print()
 
 def deletePage():
 	deleterWindow = tk.Tk()
@@ -303,7 +266,6 @@ def checkExist(fileName):
 selector = tk.Tk()
 selector.configure(padx=10, pady=10)
 selector.title("PDF Editor")
-# selector.minsize(width=400, height=50)
 
 stickyFill = tk.N+tk.E+tk.W+tk.S
 
@@ -318,17 +280,3 @@ tk.Button(selector, text="Delete a single page", command=deletePage).grid(row=4,
 selector.protocol("WM_DELETE_WINDOW", quit)
 selector.mainloop()
 
-
-# print()
-# print("Enter 1 to merge two PDF files")
-# print("Enter 2 to update a single page of a PDF")
-# print("Enter 3 to insert a single page into an existing PDF")
-# choice = input("Enter function number: ")
-# if choice == '1':
-# 	merge()
-# if choice == '2':
-# 	pageUpdate()
-# if choice == '3':
-# 	insertPage()
-
-# time.sleep(300)
