@@ -19,20 +19,20 @@ pip install PyPDF2
 
 1. Run the script or .pyw file
 
-![main window](main.png)
+![main window](screenshots/main.png)
 
 2. Click on one of the buttons and a new window will pop up depending on the function
 
-![merger](merge.png)
+![merger](screenshots/merge.png)
 
-![updater](updater.png)
+![updater](screenshots/updater.png)
 
-![inserter](inserter.png)
+![inserter](screenshots/inserter.png)
 
-![deleter](deleter.png)
+![deleter](screenshots/deleter.png)
 
 3. Pick your files and enter in the data
 
 4. If there are no problems, a confirmation will pop up
 
-![confirm](confirm.png)
+![confirm](screenshots/confirm.png)
