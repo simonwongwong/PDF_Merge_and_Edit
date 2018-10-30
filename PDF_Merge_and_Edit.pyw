@@ -3,6 +3,7 @@ import os
 import time
 import sys
 import webbrowser
+import favicon
 import tkinter as tk
 from tkinter import filedialog
 
@@ -275,7 +276,8 @@ def instructions():
 selector = tk.Tk()
 selector.configure(padx=10, pady=10)
 selector.title("PDF Editor")
-selector.iconbitmap('resources/no_text.ico')
+icon = tk.PhotoImage(data=favicon.icon)
+selector.tk.call('wm', 'iconphoto', selector._w, icon)
 
 stickyFill = tk.N + tk.E + tk.W + tk.S
 
