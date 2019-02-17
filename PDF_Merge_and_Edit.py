@@ -287,7 +287,7 @@ tk.Button(selector, text="Merge PDFs", command=merge).grid(row=1, column=1, stic
 tk.Button(selector, text="Update a single page", command=pageUpdate).grid(row=2, column=1, sticky=stickyFill, pady=3, padx=5)
 tk.Button(selector, text="Insert a page into an existing PDF", command=insertPage, padx=20).grid(row=3, column=1, sticky=stickyFill, pady=3, padx=5)
 tk.Button(selector, text="Delete a single page", command=deletePage).grid(row=4, column=1, sticky=stickyFill, pady=3, padx=5)
-tk.Button(selector, text="Instructions", command=instructions).grid(row=4, column=1, sticky=stickyFill, pady=3, padx=5)
+tk.Button(selector, text="Instructions", command=instructions).grid(row=5, column=1, sticky=stickyFill, pady=3, padx=5)
 
 
 selector.protocol("WM_DELETE_WINDOW", sys.exit)
